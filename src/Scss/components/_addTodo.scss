@@ -10,6 +10,11 @@ form {
 		font-size: 1rem;
 		color: $colorPrimary;
 	}
+	button {
+		border: none;
+		outline: none;
+		background-color: white;
+	}
 	i.fas.fa-plus {
 		border: none;
 		outline: none;

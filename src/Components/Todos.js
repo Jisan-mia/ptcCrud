@@ -1,72 +1,17 @@
 import React from "react";
+import Todo from "./Todo";
 
-const Todos = () => {
+const Todos = ({ todoList }) => {
 	return (
 		<div className="todo-area">
 			<ul className="todo-container">
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
-				<li>
-					<p className="todo-text">Drink coffee</p>
-					<div className="actions">
-						<i class="far fa-edit"></i>
-						<i class="far fa-trash-alt"></i>
-					</div>
-				</li>
+				{todoList.length ? (
+					todoList.map((todo) => <Todo key={todo.id} todoItem={todo} />)
+				) : (
+					<li style={{ color: "#80808073", fontWeight: "400" }}>
+						You haven't any todo
+					</li>
+				)}
 			</ul>
 		</div>
 	);
