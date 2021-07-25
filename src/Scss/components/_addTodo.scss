@@ -4,9 +4,10 @@ form {
 	input {
 		width: 100%;
 		padding: 10px;
-		border: 2px 5px 3px 1px solid gray;
+		border: none;
+		border-bottom: 0.4px solid rgba(130, 130, 165, 0.562);
 		outline: none;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		color: $colorPrimary;
 	}
 	i.fas.fa-plus {
