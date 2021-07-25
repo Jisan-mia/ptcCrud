@@ -10,26 +10,44 @@ body {
 
 	margin: 0 20px;
 }
+
+// scrollbar design
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $blueColor;
+	border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
 #root {
 	height: 100vh;
 	@include flexCenter;
 }
 .container {
 	flex-basis: 370px;
-	height: 510px;
+	height: 531px;
 	background-color: $whiteColor;
+	border-radius: 0 0 20px 20px;
 	box-shadow: 0 0 85px 1px rgba(0, 0, 0, 0.1);
 	.main-section {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		overflow: hidden;
-
-		.todo-area {
-			flex-grow: 7;
-		}
-		.add-todo-area {
-			flex-grow: 1;
-		}
+		// overflow: hidden;
 	}
 }

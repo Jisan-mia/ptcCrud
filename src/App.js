@@ -1,4 +1,6 @@
+import AddTodo from "./Components/AddTodo";
 import Header from "./Components/Header";
+import Todos from "./Components/Todos";
 import "./Scss/main.scss";
 
 function App() {
@@ -6,8 +8,8 @@ function App() {
 		<div className="container">
 			<div className="main-section">
 				<Header />
-				<div className="todo-area">Todo area</div>
-				<form className="add-todo-area">add tod do area</form>
+				<Todos />
+				<AddTodo />
 			</div>
 		</div>
 	);
