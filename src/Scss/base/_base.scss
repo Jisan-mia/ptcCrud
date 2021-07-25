@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Ubuntu", sans-serif;
+	background-color: $bgPrimary;
+
+	margin: 0 20px;
+}
+#root {
+	height: 100vh;
+	@include flexCenter;
+}
+.container {
+	flex-basis: 370px;
+	height: 510px;
+	background-color: $whiteColor;
+	box-shadow: 0 0 85px 1px rgba(0, 0, 0, 0.1);
+	.main-section {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		overflow: hidden;
+
+		.todo-area {
+			flex-grow: 7;
+		}
+		.add-todo-area {
+			flex-grow: 1;
+		}
+	}
+}
