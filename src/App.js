@@ -1,14 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTodo from "./Components/AddTodo";
 import Header from "./Components/Header";
 import Todos from "./Components/Todos";
 import "./Scss/main.scss";
 
+const getLocalTodos = () => {
+	const todos = localStorage.getItem("todo");
+
+	if (todos) {
+		return JSON.parse(todos);
+	} else {
+		return [];
+	}
+};
+
 function App() {
-	const [todoList, setTodoList] = useState([]);
+	const [todoList, setTodoList] = useState(getLocalTodos());
 	const [todoTextInput, setTodoTextInput] = useState("");
 	const [editItem, setEditItem] = useState("");
 	const [toggleEdit, setToggleEdit] = useState(false);
+
+	useEffect(() => {
+		localStorage.setItem("todo", JSON.stringify(todoList));
+	}, [todoList]);
 
 	// handle todo text input
 	const handleTodoInput = (todoText) => {
@@ -65,6 +79,7 @@ function App() {
 		setEditItem(id);
 		setToggleEdit(true);
 	};
+
 	return (
 		<div className="container">
 			<div className="main-section">
