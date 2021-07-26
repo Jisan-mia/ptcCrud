@@ -28,9 +28,13 @@ form {
 		border-radius: 50%;
 		padding: 30px;
 		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
 		@include responsive(375px) {
 			padding: 26px;
 		}
 		@include flexCenter;
+		&:hover {
+			background-color: #7facecd0;
+		}
 	}
 }
