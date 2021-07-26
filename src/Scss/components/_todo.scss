@@ -1,7 +1,7 @@
 li {
 	padding: 15px 30px;
 	@include responsive(365px) {
-		padding: 10px 20px;
+		padding: 13px 20px;
 	}
 	@include flexVertical;
 	justify-content: space-between;
