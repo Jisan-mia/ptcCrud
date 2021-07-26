@@ -31,7 +31,7 @@ function App() {
 	// handle submit button
 	const handleTodoSubmit = (e) => {
 		e.preventDefault();
-		if (!todoTextInput) {
+		if (!todoTextInput.trim()) {
 			alert("Please add your todo");
 		} else if (todoTextInput && toggleEdit) {
 			// const updatedTodo = todoList.map((curElem) => {
