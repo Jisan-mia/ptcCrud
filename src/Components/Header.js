@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<div className="header ">
 			<h3>{date}</h3>
-			<p>Task count</p>
+			<p>6 Tasks</p>
 		</div>
 	);
 };
