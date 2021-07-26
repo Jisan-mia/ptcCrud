@@ -2,18 +2,22 @@ li {
 	padding: 15px 30px;
 	@include flexVertical;
 	justify-content: space-between;
+
 	p {
 		color: $colorPrimary;
 	}
 
-	i {
-		margin-left: 20px;
-		cursor: pointer;
-	}
-	.fa-edit {
-		color: rgb(74, 6, 233);
-	}
-	.fa-trash-alt {
-		color: red;
+	.actions {
+		@include flexVertical;
+		i {
+			margin-left: 20px;
+			cursor: pointer;
+		}
+		.fa-edit {
+			color: rgb(74, 6, 233);
+		}
+		.fa-trash-alt {
+			color: red;
+		}
 	}
 }

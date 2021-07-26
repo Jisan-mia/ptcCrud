@@ -34,6 +34,13 @@ body {
 	background: #555;
 }
 
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 #root {
 	height: 100vh;
 	@include flexCenter;
