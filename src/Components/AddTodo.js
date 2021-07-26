@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-const AddTodo = ({ addTodo }) => {
-	const [todoText, setTodoText] = useState("");
-	const handleAddTodo = (e) => {
-		e.preventDefault();
-		if (todoText) {
-			addTodo(todoText);
-			setTodoText("");
-		} else {
-			alert("Please add your todo");
-		}
-	};
+const AddTodo = ({ handleTodoInput, todoTextInput, handleTodoSubmit }) => {
 	return (
-		<form onSubmit={handleAddTodo}>
+		<form onSubmit={handleTodoSubmit}>
 			<input
 				type="text"
-				value={todoText}
-				onChange={(e) => setTodoText(e.target.value)}
+				value={todoTextInput}
+				onChange={(e) => handleTodoInput(e.target.value)}
 			/>
 			<button>
 				<i className="fas fa-plus "></i>
