@@ -31,7 +31,7 @@ function App() {
 	return (
 		<div className="container">
 			<div className="main-section">
-				<Header />
+				<Header todoList={todoList} />
 				<Todos
 					todoList={todoList}
 					deleteTodo={deleteTodo}
