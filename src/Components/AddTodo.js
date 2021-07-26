@@ -6,7 +6,7 @@ const AddTodo = ({ handleTodoInput, todoTextInput, handleTodoSubmit }) => {
 			<input
 				type="text"
 				value={todoTextInput}
-				onChange={(e) => handleTodoInput(e.target.value)}
+				onChange={(e) => handleTodoInput(e.target.value.trim())}
 			/>
 			<button>
 				<i className="fas fa-plus "></i>
