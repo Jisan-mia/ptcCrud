@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-const Todos = ({ todoList, deleteTodo, editTodo }) => {
+const Todos = ({ todoList, deleteTodo, editTodo, isRedux }) => {
 	return (
 		<div className="todo-area">
 			<ul className="todo-container">
@@ -12,11 +12,12 @@ const Todos = ({ todoList, deleteTodo, editTodo }) => {
 							todoItem={todo}
 							deleteTodo={deleteTodo}
 							editTodo={editTodo}
+							isRedux={isRedux}
 						/>
 					))
 				) : (
 					<li style={{ color: "#80808073", fontWeight: "400" }}>
-						You haven't any todo
+						{isRedux ? "Haven't any redux todo" : "You haven't any todo"}
 					</li>
 				)}
 			</ul>

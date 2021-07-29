@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import AddTodo from "./Components/AddTodo";
 import Header from "./Components/Header";
 import Todos from "./Components/Todos";
@@ -74,27 +75,45 @@ function App() {
 	// edit a todo
 	const editTodo = (id) => {
 		const toBedEdited = todoList.find((todo) => todo.id === id);
-		console.log(toBedEdited);
+
 		setTodoTextInput(toBedEdited.todo);
 		setEditItem(id);
 		setToggleEdit(true);
 	};
 
+	// redux functionality start
+	const { todos } = useSelector((state) => state.Todos);
+	useEffect(() => {
+		localStorage.setItem("todoRedux", JSON.stringify(todos));
+	}, [todos]);
+
 	return (
-		<div className="container">
-			<div className="main-section">
-				<Header todoList={todoList} />
-				<Todos
-					todoList={todoList}
-					deleteTodo={deleteTodo}
-					editTodo={editTodo}
-				/>
-				<AddTodo
-					addTodo={addTodo}
-					handleTodoInput={handleTodoInput}
-					todoTextInput={todoTextInput}
-					handleTodoSubmit={handleTodoSubmit}
-				/>
+		<div className="under_root">
+			<div className="container">
+				<div className="main-section">
+					<Header todoList={todoList} />
+					<Todos
+						isRedux={false}
+						todoList={todoList}
+						deleteTodo={deleteTodo}
+						editTodo={editTodo}
+					/>
+					<AddTodo
+						addTodo={addTodo}
+						handleTodoInput={handleTodoInput}
+						todoTextInput={todoTextInput}
+						handleTodoSubmit={handleTodoSubmit}
+					/>
+				</div>
+			</div>
+
+			{/* redux  */}
+			<div className="container">
+				<div className="main-section">
+					<Header todoList={todos} />
+					<Todos isRedux={true} todoList={todos} editTodo={editTodo} />
+					<AddTodo isRedux={true} />
+				</div>
 			</div>
 		</div>
 	);
