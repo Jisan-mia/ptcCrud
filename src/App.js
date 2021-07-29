@@ -83,6 +83,7 @@ function App() {
 
 	// redux functionality start
 	const { todos } = useSelector((state) => state.Todos);
+
 	useEffect(() => {
 		localStorage.setItem("todoRedux", JSON.stringify(todos));
 	}, [todos]);

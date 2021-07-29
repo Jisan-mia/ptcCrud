@@ -1,10 +1,5 @@
 const initialState = {
-	todos: [
-		{
-			id: 1,
-			todo: "Redux Demo todo",
-		},
-	],
+	todos: [],
 };
 
 const todoReducers = (state = initialState, action) => {
