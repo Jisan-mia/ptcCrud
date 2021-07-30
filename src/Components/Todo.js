@@ -5,6 +5,8 @@ import { actionCreators } from "../redux/index";
 
 const Todo = ({ todoItem, deleteTodo, editTodo, isRedux }) => {
 	const dispatch = useDispatch();
+	// here i'm binding dispatch with all actions creators using bindActionCreators of redux
+	// then destructuring the actions creators and just calling them with appropriate parameter
 	const { removeTodoRedux } = bindActionCreators(actionCreators, dispatch);
 
 	const { id, todo } = todoItem;
