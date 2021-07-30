@@ -88,13 +88,13 @@ function App() {
 		localStorage.setItem("todoRedux", JSON.stringify(todos));
 	}, [todos]);
 
-	useEffect(() => {
-		setTimeout(() => {
-			alert(
-				"Hi I'm Jisan(the developer), The left todo created only using reactjs and the right side todo created using both react and redux"
-			);
-		}, 2000);
-	}, []);
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		alert(
+	// 			"Hi I'm Jisan(the developer), The left todo created only using reactjs and the right side todo created using both react and redux"
+	// 		);
+	// 	}, 2000);
+	// }, []);
 
 	return (
 		<div className="under_root">

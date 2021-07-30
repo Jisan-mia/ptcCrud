@@ -1,5 +1,15 @@
+const getLocalTodos = () => {
+	const reduxLocalTodo = localStorage.getItem("todoRedux");
+
+	if (reduxLocalTodo) {
+		return JSON.parse(reduxLocalTodo);
+	} else {
+		return [];
+	}
+};
+
 const initialState = {
-	todos: [],
+	todos: getLocalTodos(),
 };
 
 const todoReducers = (state = initialState, action) => {
